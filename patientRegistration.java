@@ -31,9 +31,6 @@ public class patientRegistration {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.out.println("SSN::"+ssn);
-		System.out.println("USER NAME::"+username);
-		System.out.println("PASSWORD::"+pwd);
 		registration();
 		patientAccepted(ssn);
 		login(username, pwd);
@@ -57,7 +54,6 @@ public class patientRegistration {
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.findElement(By.xpath("//input[@value='Register']")).click();
-	
 	driver.findElement(By.xpath("//input[@id='firstname']")).sendKeys(fname);
 	driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys(lname);
 	driver.findElement(By.xpath("//input[@id='datepicker']")).sendKeys(sdf.format(faker.date().birthday()));
